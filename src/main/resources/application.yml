@@ -1,0 +1,31 @@
+#--------------server
+server:
+  port: 8080
+  address: 127.0.0.1
+#  sessionTimeout: 30
+  contextPath: /
+
+#---------------mybatis
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  config-location: classpath:mybatis.xml
+  type-aliases-package: com.dnk.entity
+
+spring:
+  profiles:
+    active: test
+  aop:
+    auto: false
+    proxy-target-class: true
+#  thymeleaf:
+#    mode: LEGACYHTML5
+#    encoding: UTF-8
+#    prefix: /templates/
+#    suffix: .html
+#    cache: false
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+#  mvc:
+#    static-path-pattern: /resources/**
+
+

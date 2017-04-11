@@ -1,0 +1,63 @@
+  # Tomcat specifics
+#  tomcat:
+#    accessLogEnabled: false
+#    protocolHeader: x-forwarded-proto
+#    remoteIpHeader: x-forwarded-for
+#    basedir:
+#    backgroundProcessorDelay: 30 # secs
+spring:
+#  freemarker:
+#    template-loader-path: classpath:/templates/
+#    suffix: .jsp
+  datasource:
+      url: jdbc:mysql://127.0.0.1:3306/gd?useSSL=true
+      username: root
+      password: root
+#  mvc:
+#    view:
+#      prefix: templates/
+
+#  redis:
+#    host: 127.0.0.1
+#    port: 6379
+#    password:
+#    timeout: 1000
+#    pool:
+#      max-active: 300
+#      max-idle: 100
+#      max-wait: 1000
+
+
+#    static-path-pattern:
+#      initialize: false
+
+
+
+#  jpa:
+#      hibernate:
+#        ddl-auto: create
+#      show-sql: true
+
+  #mybatis.xml
+#  configuration:
+#    map-underscore-to-camel-case: true
+#    default-fetch-size: 100
+#    default-statement-timeout: 30
+#    use-generated-keys: true
+#    use-column-label: true
+#    interceptors:
+#    interceptors: com.dnk.interceptor.MybatisInterceptor
+
+#security:
+#  user:
+#    name: root
+#    password: root
+# 项目信息
+#projectConfig:
+#  superPassword: 123456
+#  tempPassword: 999999
+#  #临时密码有效时间(分钟)
+#  effective: 30
+#  gatewayServerUrl: http://114.55.128.37:8088/tenement.action
+
+

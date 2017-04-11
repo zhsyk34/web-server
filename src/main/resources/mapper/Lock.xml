@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dnk.repository.LockRepository">
+    <sql id="table">locks</sql>
+    <sql id="key">id</sql>
+    <sql id="columns">id, name</sql>
+    <sql id="sort">
+        <if test="sort != null and !sort.isEmpty() and order != null and !order.isEmpty()">
+            ORDER BY ${sort} ${order}
+        </if>
+    </sql>
+
+    <insert id="save" keyProperty="id">
+        INSERT INTO
+        <include refid="table"/>
+        (<include refid="columns"/>)
+        VALUES
+        (NULL, #{name})
+    </insert>
+
+    <select id="find" resultType="Lock">
+        SELECT * FROM
+        <include refid="table"/>
+        WHERE id = #{id}
+    </select>
+
+</mapper>
