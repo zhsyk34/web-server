@@ -8,9 +8,9 @@
     </appender>
 
     <!--<appender name="ROLL" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
-    <!--<file>${dir}/today.log</file>-->
+    <!--<file>${dir}/today.controller</file>-->
     <!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
-    <!--<fileNamePattern>${dir}%d{yyyy-MM-dd}.log</fileNamePattern>-->
+    <!--<fileNamePattern>${dir}%d{yyyy-MM-dd}.controller</fileNamePattern>-->
     <!--<maxHistory>365</maxHistory>-->
     <!--</rollingPolicy>-->
     <!--<encoder>-->
@@ -33,11 +33,13 @@
     <!--<logger name="org" level="info"/>
     <logger name="org.apache.ibatis.logging.jdbc" level="debug"/>-->
 
-    <logger name="com.dnk" level="info"/>
+    <logger name="com.dnk" level="info" additivity="false">
+        <appender-ref ref="console"/>
+    </logger>
     <!--<logger name="org.springframework.web" level="debug"/>-->
     <!--<logger name="org.springframework.security" level="debug"/>-->
 
-    <root level="info">
+    <root level="debug">
         <appender-ref ref="console"/>
     </root>
 </configuration>

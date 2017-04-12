@@ -8,10 +8,10 @@
         <!--<setting name="logPrefix" value="dao."/>-->
     </settings>
 
-    <!--<typeHandlers>
-        <package name="com.dnk.lock.standard.dict.handler"/>
-    </typeHandlers>-->
+    <typeHandlers>
+        <package name="com.dnk.dict.handler"/>
+    </typeHandlers>
     <!--<plugins>-->
-        <!--<plugin interceptor="com.dnk.interceptor.MybatisParameterInterceptor"/>-->
+    <!--<plugin interceptor="com.dnk.interceptor.MybatisParameterInterceptor"/>-->
     <!--</plugins>-->
 </configuration>

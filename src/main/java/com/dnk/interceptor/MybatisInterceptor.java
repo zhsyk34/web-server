@@ -24,7 +24,7 @@ public class MybatisInterceptor implements Interceptor {
 
     @Override
     public Object intercept(Invocation invocation) throws Throwable {
-        logger.info("target:{}", invocation.getTarget());
+        logger.info("controller:{}", invocation.getTarget());
         logger.info("method:{}", invocation.getMethod());
         logger.info("args:{}", invocation.getArgs().length);
         for (Object arg : invocation.getArgs()) {

@@ -15,16 +15,17 @@ spring:
   profiles:
     active: test
   aop:
-    auto: false
     proxy-target-class: true
-#  thymeleaf:
-#    mode: LEGACYHTML5
-#    encoding: UTF-8
+  thymeleaf:
+    mode: LEGACYHTML5
+    encoding: UTF-8
 #    prefix: /templates/
 #    suffix: .html
-#    cache: false
+    cache: false
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
+  redis:
+    port: 6379
 #  mvc:
 #    static-path-pattern: /resources/**
 

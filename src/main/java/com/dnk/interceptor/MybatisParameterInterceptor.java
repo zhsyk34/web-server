@@ -21,6 +21,22 @@ public class MybatisParameterInterceptor {
 
     private static final Logger logger = LoggerFactory.getLogger(MybatisParameterInterceptor.class);
 
+    public static void main(String[] args) throws NoSuchMethodException {
+        ParameterNameDiscoverer discoverer = new
+//                DefaultParameterNameDiscoverer()
+                LocalVariableTableParameterNameDiscoverer();
+        Method[] methods = LockRepository.class.getDeclaredMethods();
+        for (Method method : methods) {
+            System.out.println(method);
+            String[] parameterNames = discoverer.getParameterNames(method);
+            if (parameterNames != null) {
+                for (String name : parameterNames) {
+                    System.out.println(name);
+                }
+            }
+        }
+    }
+
     @Pointcut("execution(public * com.dnk.repository.*.*(..))")
 //    @Pointcut("this(com.dnk.repository.AutoResolver)")
 //    @Pointcut("execution(public Object org.apache.ibatis.reflection.ParamNameResolver.getNamedParams(Object[]))")
@@ -30,14 +46,14 @@ public class MybatisParameterInterceptor {
     public void repository() {
     }
 
-//    @Around("repository()")
+    //    @Around("repository()")
     public Object around(ProceedingJoinPoint point) throws Throwable {
         System.err.println("---------------");
         Map<String, Object> map = new HashMap<>();
         Object[] args = point.getArgs();
 
         Object target = point.getTarget();
-        logger.info("target:{}", target);
+        logger.info("controller:{}", target);
         logger.info("this:{}", point.getThis());
         logger.info("kind:{}", point.getKind());
         logger.info("signature:{}", point.getSignature().getName());
@@ -60,23 +76,6 @@ public class MybatisParameterInterceptor {
 
 //        return point.proceed(new Object[]{map});
         return point.proceed(args);
-    }
-
-    public static void main(String[] args) throws NoSuchMethodException {
-        ParameterNameDiscoverer discoverer =                new
-//                DefaultParameterNameDiscoverer()
-        LocalVariableTableParameterNameDiscoverer()
-                ;
-        Method[] methods = LockRepository.class.getDeclaredMethods();
-        for (Method method : methods) {
-            System.out.println(method);
-            String[] parameterNames = discoverer.getParameterNames(method);
-            if (parameterNames != null) {
-                for (String name : parameterNames) {
-                    System.out.println(name);
-                }
-            }
-        }
     }
 
 }

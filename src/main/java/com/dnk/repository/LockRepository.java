@@ -2,9 +2,10 @@ package com.dnk.repository;
 
 import com.dnk.entity.Lock;
 
-public interface LockRepository extends AutoResolver{
+public interface LockRepository {
 
-    int save(Lock lock);
+    Lock getById(long id);
 
-    Lock find(long id);
+    Lock getByUuid(String uuid);
+
 }

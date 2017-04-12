@@ -1,17 +1,13 @@
 package com.dnk.service;
 
 import com.dnk.entity.Lock;
-import com.dnk.repository.LockRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-@Service
-public class LockService {
+public interface LockService {
 
-    @Autowired
-    private LockRepository lockRepository;
+    Lock getById(long id);
 
-    public Lock find(long id) {
-        return lockRepository.find(id);
-    }
+    Lock getByUuid(String uuid);
+
+    String getGatewaySnByUuid(String uuid);
+
 }
