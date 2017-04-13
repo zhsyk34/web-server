@@ -37,8 +37,8 @@ public final class DefaultRedisCacheAccessor implements RedisCacheAccessor {
     }
 
     @Override
-    public void shareAppCommand(@NonNull String serverId, @NonNull Command command) {
-        redisAccessor.enqueue(TCP_COMMAND, JSON.toJSONString(command));
+    public void shareAppCommand(@NonNull String sn, @NonNull Command command) {
+        redisAccessor.enqueue(sn, JSON.toJSONString(command));
     }
 
 }

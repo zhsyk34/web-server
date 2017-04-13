@@ -9,7 +9,7 @@ public interface RequestService {
 
     Request getBySn(String sn);
 
-    String saveOnAccept(String uuid, String action, String params, String appId, String callback);
+    String saveOnAccept(String uuid, String context, String appId, String callback);
 
     int updateByStatus(String sn, RequestStatusEnum requestStatusEnum);
 

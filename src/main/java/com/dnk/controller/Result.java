@@ -22,7 +22,7 @@ public class Result<T> {
         return new Result<>(resultEnum, t);
     }
 
-    public static Result from(ResultEnum resultEnum) {
+    public static <T> Result<T> from(ResultEnum resultEnum) {
         return from(resultEnum, null);
     }
 

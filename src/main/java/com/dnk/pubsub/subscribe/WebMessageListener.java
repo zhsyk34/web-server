@@ -30,6 +30,7 @@ public final class WebMessageListener extends AbstractRedisListener {
         String serverId = data.getWebServerId();
         //TODO:equals
         logger.info("serverId:{}", serverId);
+        logger.info("msg:{}请求结果:{}", data.getId(), data.isResult());
 
         String id = data.getId();//request-sn
 

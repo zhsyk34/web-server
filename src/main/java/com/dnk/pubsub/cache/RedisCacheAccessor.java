@@ -39,9 +39,9 @@ public interface RedisCacheAccessor {
     /**
      * 提交(共享)app的请求指令
      *
-     * @param serverId 服务器编号
-     * @param command  请求指令
+     * @param sn      网关编号
+     * @param command 请求指令
      */
-    void shareAppCommand(@NonNull String serverId, @NonNull Command command);
+    void shareAppCommand(@NonNull String sn, @NonNull Command command);
 
 }

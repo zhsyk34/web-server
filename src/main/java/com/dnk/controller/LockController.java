@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 
 @RestController
-@RequestMapping("api/lock")
+@RequestMapping("lock")
 public class LockController {
 
     @Resource

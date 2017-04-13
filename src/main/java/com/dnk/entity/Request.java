@@ -14,8 +14,7 @@ public class Request {
     private long id;
     private String sn;//请求编号
     private String uuid;//锁编号
-    private String action;//请求类型
-    private String params;//请求参数
+    private String context;//请求内容
     private String appId;//请求者身份
     private String callback;//请求提供的回调地址
     private LocalDateTime acceptTime;

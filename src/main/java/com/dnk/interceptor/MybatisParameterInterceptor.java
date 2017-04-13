@@ -71,7 +71,7 @@ public class MybatisParameterInterceptor {
 
 //        System.out.println(parameterNames.length);
 //        for (String parameterName : parameterNames) {
-//            logger.info("param name:{}", parameterName);
+//            logger.info("PARAM name:{}", parameterName);
 //        }
 
 //        return point.proceed(new Object[]{map});

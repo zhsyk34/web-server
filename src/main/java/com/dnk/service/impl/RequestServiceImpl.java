@@ -28,8 +28,8 @@ public class RequestServiceImpl implements RequestService {
     }
 
     @Override
-    public String saveOnAccept(String uuid, String action, String params, String appId, String callback) {
-        Request request = new Request().setUuid(uuid).setAction(action).setParams(params).setAppId(appId).setCallback(callback);
+    public String saveOnAccept(String uuid, String context, String appId, String callback) {
+        Request request = new Request().setUuid(uuid).setContext(context).setAppId(appId).setCallback(callback);
 
         String sn = UUID.randomUUID().toString();//TODO:serverId
         request.setSn(sn).setAcceptTime(LocalDateTime.now()).setStatus(ACCEPT);

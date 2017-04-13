@@ -3,7 +3,7 @@
 <mapper namespace="com.dnk.repository.RequestRepository">
     <sql id="table">request</sql>
     <sql id="key">id</sql>
-    <sql id="columns">id, sn, uuid, action, params, appId, callback, acceptTime, finishTime, callbackTime, status</sql>
+    <sql id="columns">id, sn, uuid, context, appId, callback, acceptTime, finishTime, callbackTime, status</sql>
     <sql id="sort">
         <if test="sort != null and !sort.isEmpty() and order != null and !order.isEmpty()">
             ORDER BY ${sort} ${order}
@@ -15,7 +15,7 @@
         <include refid="table"/>
         (<include refid="columns"/>)
         VALUES
-        (NULL, #{sn}, #{uuid}, #{action}, #{params}, #{appId}, #{callback}, #{acceptTime}, NULL, NULL, #{status})
+        (NULL, #{sn}, #{uuid}, #{context}, #{appId}, #{callback}, #{acceptTime}, NULL, NULL, #{status})
     </insert>
 
     <update id="updateByStatus">

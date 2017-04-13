@@ -19,7 +19,6 @@ public class ExceptionController {
     @ExceptionHandler(Exception.class)
     @ResponseBody
     public Result handle(Exception e) {
-        logger.error("----------handle exception------------");
         logger.error("系统异常", e);
         if (e instanceof CustomException) {
             CustomException ce = (CustomException) e;

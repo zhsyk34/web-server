@@ -13,6 +13,8 @@ spring:
       url: jdbc:mysql://127.0.0.1:3306/gd?useSSL=true
       username: root
       password: root
+server:
+  serverId: w00001
 #  mvc:
 #    view:
 #      prefix: templates/
